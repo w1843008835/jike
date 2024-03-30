@@ -19,8 +19,8 @@ const userReducer = userStore.reducer
 
 const fetchLogin = (loginForm) => {
     return async (dispatch) => {
-        //const res = await request.post('/authorizations', loginForm)
-        const res = await request.post('/about', loginForm)
+        const res = await request.post('/authorizations', loginForm)
+
         dispatch(setToken(res.data.data))
     }
 }
