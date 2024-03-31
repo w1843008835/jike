@@ -6,27 +6,38 @@ const userStore = createSlice({
     name: "user",
     initialState: {
         //token: localStorage.getItem('token_key') || ''
-        token: getToken() || ''
+        token: getToken() || '',
+        userInfo: {}
     },
     reducers: {
         setToken(state, action) {
             state.token = action.payload
             //localStorage.setItem('token_key', action.payload)
             _setToken(action.payload)
+        },
+        setUserInfo(state, action) {
+            state.userInfo = action.payload
         }
     }
 })
 
 //解构actionCreater
-const { setToken } = userStore.reducer
+const { setToken, setUserInfo } = userStore.reducer
 const userReducer = userStore.reducer
 
 const fetchLogin = (loginForm) => {
     return async (dispatch) => {
         const res = await request.post('/authorizations', loginForm)
 
-        dispatch(setToken(res.data.data))
+        dispatch(setToken(res.data.token))
     }
 }
-export { fetchLogin, setToken }
+//获取个人信息异步方法
+const fetchUserInfo = () => {
+    return async (dispatch) => {
+        const res = await request.get('/user/profile')
+        dispatch(setUserInfo(res.data))
+    }
+}
+export { fetchLogin, setToken, fetchUserInfo }
 export default userReducer
