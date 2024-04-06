@@ -7,7 +7,8 @@ import {
     Input,
     Upload,
     Space,
-    Select
+    Select,
+    message
 } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
 import { Link, createRoutesFromChildren } from 'react-router-dom'
@@ -32,13 +33,14 @@ const Publish = () => {
     }, []);
     const onFinish = async (values) => {
         console.log(values)
+        if (imageList.length !== imageType) return message.warning('封面类型和图片数量不一致')
         const { title, content, chanel_id } = values
         const reqData = {
             title,
             content,
             cover: {
                 type: 0,
-                images: []
+                images: imageList.map(item => item.response.data.url)
             }, chanel_id
         }
         createArticleAPI(reqData)
@@ -97,7 +99,7 @@ const Publish = () => {
                         {imageType > 0 && <Upload
                             listType="picture-card"
                             showUploadList
-                            action={'http://geek.itheima.net/v1_0/upload'}
+                            action={'http:/d/geek.itheima.net/v1_0/uploa'}
                             name='image'
                             onChange={onChange}
                             maxCount={imageType}
