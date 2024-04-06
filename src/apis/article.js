@@ -3,8 +3,19 @@ import { request } from "@/utils";
 
 export function getChanelApi() {
     return request({
-        url: '/ka',
+        url: '/chanels',
         method: 'GET',
 
     })
+}
+
+export function createArticleAPI(data) {
+    return request(
+        {
+            url: '/article?draft=false',
+            method: 'POST',
+            data
+        }
+    )
+
 }

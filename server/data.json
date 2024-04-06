@@ -1,10 +1,42 @@
 {
-    "chanels":[
-        {"id":"001","name":"java"},
-        {"id":"002","name":"python"}
-    ],
-    "authorizations":[
-        {"mobile":"13800000002","code":"246810"}
-       
-    ]
+  "chanels": [
+    {
+      "id": "001",
+      "name": "java"
+    },
+    {
+      "id": "002",
+      "name": "python"
+    }
+  ],
+  "article": [
+    {
+      "title": "12345",
+      "content": "<p>content</p>",
+      "cover": {
+        "type": 1,
+        "images": []
+      },
+      "chanel_id": 2,
+      "id": "9a79"
+    },
+    {
+      "id": "b4b0",
+      "title": "122",
+      "content": "<p>swdewde</p>",
+      "cover": {
+        "type": 0,
+        "images": []
+      }
+    },
+    {
+      "id": "997e",
+      "title": "122",
+      "content": "<p>swdewde</p>",
+      "cover": {
+        "type": 0,
+        "images": []
+      }
+    }
+  ]
 }
