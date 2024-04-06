@@ -3,7 +3,7 @@ import { request } from "@/utils";
 
 export function getChanelApi() {
     return request({
-        url: '/chanels',
+        url: '/ka',
         method: 'GET',
 
     })

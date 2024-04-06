@@ -6,7 +6,7 @@ import axios from "axios";
 import { getToken, removeToken } from "./token";
 import router from "@/router";
 const request = axios.create({
-    baseURL: 'http://geek.itheima.net/v1_0',
+    baseURL: 'http://localhost:8888',
     timeout: 5000
 })
 

@@ -1,0 +1,10 @@
+{
+    "chanels":[
+        {"id":"001","name":"java"},
+        {"id":"002","name":"python"}
+    ],
+    "authorizations":[
+        {"mobile":"13800000002","code":"246810"}
+       
+    ]
+}

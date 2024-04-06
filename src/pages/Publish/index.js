@@ -25,7 +25,7 @@ const Publish = () => {
     useEffect(() => {
         const getChanelList = async () => {
             const res = await getChanelApi()
-            setChanelList(res.data.chanels)
+            setChanelList(res)
         }
         getChanelList()
     }, [])
