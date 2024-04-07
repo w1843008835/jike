@@ -76,8 +76,8 @@ const Article = () => {
         chanel_id: '',
         begin_pubdate: '',
         end_pubdate: '',
-        page: 1,
-        per_page: 4
+        page: '',
+        per_page: ''
 
     })
     //获取文章列表 
@@ -96,9 +96,9 @@ const Article = () => {
         setReqData({
             ...reqData,
             status: val.status,
-            chanel_id: val.chanel_id,
-            begin_pubdate: val.date[0].format('YYYY-MM-DD'),
-            end_pubdate: val.date[1].format('YYYY-MM-DD'),
+            // chanel_id: val.chanel_id,
+            //begin_pubdate: val.date[0].format('YYYY-MM-DD'),
+            //end_pubdate: val.date[1].format('YYYY-MM-DD'),
 
         })
     }

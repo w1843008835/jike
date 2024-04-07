@@ -34,7 +34,7 @@ const Publish = () => {
                 images: imageList.map(item => item.response.data.url)
             },
             title,
-            status: 1,
+            status: 2,
             pubdate: '2019-03-11 09:00:00',
             read_count: 0,
             comment_count: 0,
