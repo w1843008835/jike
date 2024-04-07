@@ -19,69 +19,34 @@
       },
       "chanel_id": 2,
       "id": "9a79"
-    },
-    {
-      "id": "b4b0",
-      "title": "122",
-      "content": "<p>swdewde</p>",
-      "cover": {
-        "type": 0,
-        "images": []
-      }
-    },
-    {
-      "id": "997e",
-      "title": "122",
-      "content": "<p>swdewde</p>",
-      "cover": {
-        "type": 0,
-        "images": []
-      }
-    },
-    {
-      "id": "a470",
-      "title": "122wde",
-      "content": "<p>cdesfv</p>",
-      "cover": {
-        "type": 0,
-        "images": []
-      }
-    },
-    {
-      "id": "3d7f",
-      "title": "122wde",
-      "content": "<p>cdesfv</p>",
-      "cover": {
-        "type": 0,
-        "images": []
-      }
     }
+   
+  
   ],
-  "articleList":[
+  "articleList": [
     {
-        "id": "8218",
-        "comment_count": 0,
-        "cover": {
-            "images": []
-        },
-        "like_count": 0,
-        "pubdate": "2019-03-11 09:00:00",
-        "read_count": 2,
-        "status": 2,
-        "title": "wkwebview离线化加载h5资源解决方案"
-
-    },{
-        "id": "8219",
-        "comment_count": 0,
-        "cover": {
-            "images": []
-        },
-        "like_count": 0,
-        "pubdate": "2019-03-11 09:00:00",
-        "read_count": 2,
-        "status": 2,
-        "title": "5资源解决方案"
-
+      "id": "8218",
+      "comment_count": 0,
+      "cover": {
+        "images": []
+      },
+      "like_count": 0,
+      "pubdate": "2019-03-11 09:00:00",
+      "read_count": 2,
+      "status": 2,
+      "title": "wkwebview离线化加载h5资源解决方案"
+    },
+    {
+      "id": "8219",
+      "comment_count": 0,
+      "cover": {
+        "images": []
+      },
+      "like_count": 0,
+      "pubdate": "2019-03-11 09:00:00",
+      "read_count": 2,
+      "status": 2,
+      "title": "5资源解决方案"
     }
   ]
 }

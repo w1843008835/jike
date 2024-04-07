@@ -11,6 +11,10 @@ const { Option } = Select
 const { RangePicker } = DatePicker
 
 const Article = () => {
+    const status = {
+        1: <Tag color='warning'>待审核</Tag>,
+        2: <Tag color='success'>审核通过</Tag>
+    }
     const { chanelList } = useChanel()
     // 准备列数据
     const columns = [
@@ -30,7 +34,8 @@ const Article = () => {
         {
             title: '状态',
             dataIndex: 'status',
-            render: data => <Tag color="green">审核通过</Tag>
+            //render: data => <Tag color="green">审核通过</Tag>
+            render: data => status[data]
         },
         {
             title: '发布时间',
@@ -76,6 +81,7 @@ const Article = () => {
         }
         getlist()
     }, [])
+
     return (
         <div>
             <Card
