@@ -3,11 +3,13 @@ import { Card, Breadcrumb, Form, Button, Radio, DatePicker, Select, Table, Tag, 
 import locale from 'antd/es/date-picker/locale/zh_CN'
 import img404 from '@/assets/error.png'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons'
+import { useChanel } from '@/hooks/useChanel'
 
 const { Option } = Select
 const { RangePicker } = DatePicker
 
 const Article = () => {
+    const { chanelList } = useChanel()
     // 准备列数据
     const columns = [
         {
@@ -101,9 +103,10 @@ const Article = () => {
                             placeholder="请选择文章频道"
                             defaultValue="lucy"
                             style={{ width: 120 }}
+
                         >
-                            <Option value="jack">Jack</Option>
-                            <Option value="lucy">Lucy</Option>
+                            {chanelList.map(item => <Option key={item.name} value={item.id}>{item.name}</Option>)}
+
                         </Select>
                     </Form.Item>
 

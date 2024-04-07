@@ -15,22 +15,15 @@ import { Link, createRoutesFromChildren } from 'react-router-dom'
 import './index.scss'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-import { useEffect, useState } from 'react'
-import { createArticleAPI, getChanelApi } from '@/apis/article'
+import { useState } from 'react'
+import { createArticleAPI } from '@/apis/article'
+import { useChanel } from '@/hooks/useChanel'
 
 const { Option } = Select
 
 
 const Publish = () => {
-    //获取频道列表
-    const [chanelList, setChanelList] = useState([])
-    useEffect(() => {
-        const getChanelList = async () => {
-            const res = await getChanelApi()
-            setChanelList(res)
-        }
-        getChanelList()
-    }, []);
+    const { chanelList } = useChanel()
     const onFinish = async (values) => {
         console.log(values)
         if (imageList.length !== imageType) return message.warning('封面类型和图片数量不一致')
