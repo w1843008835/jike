@@ -22,7 +22,7 @@ export function createArticleAPI(data) {
 
 export function getArticleListAPI(params) {
     return request({
-        url: "/articleList",
+        url: "/article",
         method: 'GET',
         params
     })

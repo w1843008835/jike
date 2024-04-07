@@ -29,12 +29,19 @@ const Publish = () => {
         if (imageList.length !== imageType) return message.warning('封面类型和图片数量不一致')
         const { title, content, chanel_id } = values
         const reqData = {
-            title,
-            content,
             cover: {
                 type: 0,
                 images: imageList.map(item => item.response.data.url)
-            }, chanel_id
+            },
+            title,
+            status: 1,
+            pubdate: '2019-03-11 09:00:00',
+            read_count: 0,
+            comment_count: 0,
+            like_count: 0,
+            content,
+            chanel_id
+
         }
         createArticleAPI(reqData)
     }
