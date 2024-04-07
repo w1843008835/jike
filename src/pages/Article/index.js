@@ -70,18 +70,38 @@ const Article = () => {
             }
         }
     ]
+    //筛选功能
+    const [reqData, setReqData] = useState({
+        status: '',
+        chanel_id: '',
+        begin_pubdate: '',
+        end_pubdate: '',
+        page: 1,
+        per_page: 4
 
-    //获取文章列表
+    })
+    //获取文章列表 
+    //当reqData依赖项发生变化时，重复执行数据拉取动作
     const [list, setList] = useState([])
     useEffect(() => {
         async function getlist() {
-            const res = await getArticleListAPI()
+            const res = await getArticleListAPI(reqData)
             setList(res)
 
         }
         getlist()
-    }, [])
+    }, [reqData])
 
+    const onFinish = (val) => {
+        setReqData({
+            ...reqData,
+            status: val.status,
+            chanel_id: val.chanel_id,
+            begin_pubdate: val.date[0].format('YYYY-MM-DD'),
+            end_pubdate: val.date[1].format('YYYY-MM-DD'),
+
+        })
+    }
     return (
         <div>
             <Card
@@ -93,7 +113,7 @@ const Article = () => {
                 }
                 style={{ marginBottom: 20 }}
             >
-                <Form initialValues={{ status: '' }}>
+                <Form initialValues={{ status: '' }} onFinish={onFinish}>
                     <Form.Item label="状态" name="status">
                         <Radio.Group>
                             <Radio value={''}>全部</Radio>
