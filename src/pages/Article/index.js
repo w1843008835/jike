@@ -102,6 +102,7 @@ const Article = () => {
 
         })
     }
+
     return (
         <div>
             <Card
@@ -147,7 +148,11 @@ const Article = () => {
                 </Form>
             </Card>
             <Card title={`根据筛选条件共查询到 ${list.length} 条结果：`}>
-                <Table rowKey="id" columns={columns} dataSource={list} />
+                <Table rowKey="id" columns={columns} dataSource={list} pagination={{
+                    total: list.length,
+                    pageSize: 2,
+
+                }} />
             </Card>
         </div>
     )
