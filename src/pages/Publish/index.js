@@ -11,12 +11,12 @@ import {
     message
 } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
-import { Link, createRoutesFromChildren } from 'react-router-dom'
+import { Link, createRoutesFromChildren, useSearchParams } from 'react-router-dom'
 import './index.scss'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-import { useState } from 'react'
-import { createArticleAPI } from '@/apis/article'
+import { useEffect, useState } from 'react'
+import { createArticleAPI, getArticleById } from '@/apis/article'
 import { useChanel } from '@/hooks/useChanel'
 
 const { Option } = Select
@@ -55,6 +55,17 @@ const Publish = () => {
         setImageType(e.target.value)
 
     }
+    //回填数据
+    const [searchParams] = useSearchParams()
+    const articleId = searchParams.get('id')
+    const [form] = Form.useForm()
+    useEffect(() => {
+        async function getArticleDetail() {
+            const res = await getArticleById(articleId)
+            form.setFieldsValue(res)
+        }
+        getArticleDetail()
+    }, [articleId, form])
     return (
         <div className="publish">
             <Card
@@ -71,7 +82,7 @@ const Publish = () => {
                     wrapperCol={{ span: 16 }}
                     initialValues={{ type: 0 }}
                     onFinish={onFinish}
-                >
+                    form={form}>
                     <Form.Item
                         label="标题"
                         name="title"
@@ -85,7 +96,7 @@ const Publish = () => {
                         rules={[{ required: true, message: '请选择文章频道' }]}
                     >
                         <Select placeholder="请选择文章频道" style={{ width: 400 }}>
-                            {chanelList.map(item => <Option key={item.idi} value={item.id}>{item.name}</Option>)}
+                            {chanelList.map(item => <Option key={item.id} value={item.id}>{item.name}</Option>)}
                         </Select>
                     </Form.Item>
                     <Form.Item label="封面">
