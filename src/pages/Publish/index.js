@@ -62,7 +62,14 @@ const Publish = () => {
     useEffect(() => {
         async function getArticleDetail() {
             const res = await getArticleById(articleId)
-            form.setFieldsValue(res)
+            form.setFieldsValue({
+                ...res,
+                type: res.cover.type
+            })
+            setImageType(res.cover.type)
+            setImageList(res.cover.images.map(url => {
+                return { url }
+            }))
         }
         getArticleDetail()
     }, [articleId, form])
@@ -114,6 +121,7 @@ const Publish = () => {
                             name='image'
                             onChange={onChange}
                             maxCount={imageType}
+                            fileList={imageList}
                         >
                             <div style={{ marginTop: 8 }}>
                                 <PlusOutlined />
