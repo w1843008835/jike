@@ -69,18 +69,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-13800000002/246810
-创建项目：
-启动项目：npm start
-启动 mock 服务：npm run server
-打包:npm run build
-安装服务： npm install -g serve
-启动服务：serve -s build
-包体积分析-安装：npm i source-map-explorer
-包体积分析-命令： npm run analyze
-
-  <ul>
-      <li>启动项目：npm start</li>
+      <ul>
+        <li>启动项目：npm start</li>
         <li>启动 mock 服务：npm run server</li>
-                <li>打包:npm run build</li>
-     </ul>
+        <li>打包:npm run build</li>
+        <li>安装服务： npm install -g serve</li>
+        <li> 启动服务：serve -s build</li>
+        <li>包体积分析-安装：npm i source-map-explorer</li>
+        <li>包体积分析-命令： npm run analyze</li>
+        <li></li>
+        <li></li>
+      </ul>
