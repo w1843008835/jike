@@ -5,7 +5,9 @@ import './index.scss'
 function App() {
   return (
     <div className="App">
-      はは
+      <ul>
+        <li></li>
+      </ul>
     </div>
   );
 }

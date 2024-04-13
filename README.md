@@ -78,3 +78,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 启动服务：serve -s build
 包体积分析-安装：npm i source-map-explorer
 包体积分析-命令： npm run analyze
+
+  <ul>
+      <li>启动项目：npm start</li>
+        <li>启动 mock 服务：npm run server</li>
+                <li>打包:npm run build</li>
+     </ul>
