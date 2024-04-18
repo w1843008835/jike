@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### 启动项目：npm start
 
-### 启动 mock 服务：npm run server
+### MOCK-安装： npm i -D json-serve ;启动 mock 服务：npm run server
 
 ### 打包:npm run build
 
